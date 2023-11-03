@@ -8,7 +8,11 @@ interface calculatorProps {
 const Display = (props: calculatorProps) => {
   return (
     <div className="flex border-2 p-10 w-[450px] overflow-hidden justify-center">
-      {props.numberOne}
+      {props.output == " "
+        ? props.symbol == " "
+          ? props.numberOne
+          : props.numberTwo
+        : props.output}
     </div>
   );
 };

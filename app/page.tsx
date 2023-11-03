@@ -20,6 +20,8 @@ export default function Home() {
       console.log(c);
       setOperator(" ");
       setResult(String(c));
+      setFirstNumber("");
+      setSecondNumber("");
     } else if (operator == "-") {
       const a = Number(firstNumber);
       const b = Number(secondNumber);
@@ -49,7 +51,7 @@ export default function Home() {
       setOperator("+");
     } else if (symbol == "-") {
       setOperator("-");
-    } else if (symbol == "/") {
+    } else if (symbol == "X") {
       setOperator("X");
     } else {
       setOperator("/");
@@ -90,7 +92,11 @@ export default function Home() {
           <Buttons value={"2"} />
         </div>
 
-        <div>
+        <div
+          onClick={() => {
+            numberSetter("3");
+          }}
+        >
           <Buttons value={"3"} />
         </div>
 
@@ -100,37 +106,61 @@ export default function Home() {
       </div>
 
       <div className="flex gap-6">
-        <div>
+        <div
+          onClick={() => {
+            numberSetter("4");
+          }}
+        >
           <Buttons value={"4"} />
         </div>
 
-        <div>
+        <div
+          onClick={() => {
+            numberSetter("5");
+          }}
+        >
           <Buttons value={"5"} />
         </div>
 
-        <div>
+        <div
+          onClick={() => {
+            numberSetter("6");
+          }}
+        >
           <Buttons value={"6"} />
         </div>
 
-        <div>
+        <div onClick={() => Operations("-")}>
           <Buttons value={"-"} />
         </div>
       </div>
 
       <div className="flex gap-6">
-        <div>
+        <div
+          onClick={() => {
+            numberSetter("7");
+          }}
+        >
           <Buttons value={"7"} />
         </div>
 
-        <div>
+        <div
+          onClick={() => {
+            numberSetter("8");
+          }}
+        >
           <Buttons value={"8"} />
         </div>
 
-        <div>
+        <div
+          onClick={() => {
+            numberSetter("9");
+          }}
+        >
           <Buttons value={"9"} />
         </div>
 
-        <div>
+        <div onClick={() => Operations("X")}>
           <Buttons value={"X"} />
         </div>
       </div>
@@ -144,14 +174,18 @@ export default function Home() {
             setResult(" ");
           }}
         >
-          <Buttons value={"."} />
+          <Buttons value={"C"} />
         </div>
 
-        <div>
+        <div
+          onClick={() => {
+            numberSetter("0");
+          }}
+        >
           <Buttons value={"0"} />
         </div>
 
-        <div>
+        <div onClick={() => Operations("/")}>
           <Buttons value={"/"} />
         </div>
 
