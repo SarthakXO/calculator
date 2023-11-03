@@ -17,7 +17,7 @@ export default function Home() {
       const a = Number(firstNumber);
       const b = Number(secondNumber);
       const c = a + b;
-      console.log(c);
+
       setOperator(" ");
       setResult(String(c));
       setFirstNumber("");
@@ -26,21 +26,21 @@ export default function Home() {
       const a = Number(firstNumber);
       const b = Number(secondNumber);
       const c = a - b;
-      console.log(c);
+
       setOperator(" ");
       setResult(String(c));
     } else if (operator == "X") {
       const a = Number(firstNumber);
       const b = Number(secondNumber);
       const c = a * b;
-      console.log(c);
+
       setOperator(" ");
       setResult(String(c));
     } else if (operator == "/") {
       const a = Number(firstNumber);
       const b = Number(secondNumber);
       const c = a / b;
-      console.log(c);
+
       setOperator(" ");
       setResult(String(c));
     }
@@ -60,8 +60,11 @@ export default function Home() {
 
   const numberSetter = (value: string) => {
     if (operator == " ") {
+      setResult(" ");
       setFirstNumber(firstNumber + value);
     } else {
+      setResult(" ");
+
       setSecondNumber(secondNumber + value);
     }
   };
